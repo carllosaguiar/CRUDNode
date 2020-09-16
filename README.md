@@ -3,7 +3,8 @@
 ## TOC
 
 [Apresentação](#apresentação)   
-[Requisitos](#requisitos)   
+[Requisitos](#requisitos)
+[Ambiente](#ambiente)
 [Instalação e Uso](#instalação-e-uso)
 
 
@@ -16,6 +17,10 @@ Para esse projeto, supomos que você ja tenha em sua máquina a `versão 10` mai
 - Node.js 10.x -v
 - Git
 - npm (Não é necessário instalação)
+- Mongose
+
+## Ambiente
+Essa documentação te norteará quanto ao desenvolvimento em uma distribuição linux qualquer. Para OS Windows ou Mac, consulte o guia de instalação das ferramentas as quais são listadas como requisitos para testar esse projeto localmente.
 
 ## Instalação e uso
 Passo 1- Faça download do projeto no repositório atual.
