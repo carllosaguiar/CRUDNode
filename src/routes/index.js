@@ -4,7 +4,7 @@ const route = express.Router();
 
 // This route will be used for show a initial page.
 route.get('/', function(req, res){
-    res.send('Hello World!')
+    res.render('home');
 })
     
 module.exports = route;
