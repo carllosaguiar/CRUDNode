@@ -1,6 +1,7 @@
-const express = require('express') // import express module    
+const express = require('express') // import express module
+const path = require('path')  
 const expressLayouts = require('express-ejs-layouts')
-const routes = require('./src/routes/index') //import routes for our app
+const routes = require('./src/routes/plants/index') //import routes for our app
 const bodyparser = require('body-parser')
 
 const app = express()
@@ -11,6 +12,7 @@ app.use('/css', express.static(__dirname + 'public/css'))
 //Set template engine
 app.use(expressLayouts)
 app.set('layout', './layouts/full')
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs') // use engine ejs
 
 app.use(bodyparser.urlencoded({extended: true})) // Our help with pass request body
