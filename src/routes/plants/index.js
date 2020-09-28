@@ -1,6 +1,6 @@
-const express = require('express');
-const route = express.Router();
-
+const express = require('express')
+const route = express.Router()
+const db = require('mongodb').MongoClient
 
 // This route will be used for show a initial page.
 route.get('/', function(req, res){
@@ -9,8 +9,12 @@ route.get('/', function(req, res){
 
 // plants
 route.post('/', function(req, res){
-    console.log(req.body)
-    res.render('home', { title : 'CRUD | With Node.js'});
+    db.collection('plants').save(req.body, (err, result) => {
+        if(err)
+            return console.log(err)
+        console.log('Salvo no mongodb')
+        res.render('home', { title : 'CRUD | With Node.js'});
+    })
 })
 
 
