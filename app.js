@@ -5,7 +5,7 @@ const routes = require('./src/routes/plants/index') //import routes for our app
 const bodyparser = require('body-parser')
 const objectID = require('mongodb').ObjectID
 const MongoClient = require('mongodb').MongoClient
-const uri = "mongodb+srv://carlos:<>@cluster0.fynks.mongodb.net/<crudavicena>?retryWrites=true&w=majority"
+const uri = "mongodb+srv://carlos:CarKiv22@cluster0.fynks.mongodb.net/crudavicena?retryWrites=true&w=majority"
 const port = 3000
 
 const app = express()
@@ -23,10 +23,12 @@ app.use(bodyparser.urlencoded({extended: true})) // Our help with pass request b
 app.use('/', routes) // Isso informa ao nosso app que sempre que receber uma solicitação com "/", use o arquivo de rotas.
 
 //Create connection
-MongoClient.connect(uri, (err, client) => {
-    if(err)
-        return console.log(err)
-    db = client.db('crudavicena')
+MongoClient.connect(uri, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+}).then (() => console.log ('DB Connected!'))
+.catch (err => {
+console.log ((err))
 })
 
 app.listen(port, () => {
