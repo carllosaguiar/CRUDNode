@@ -1,15 +1,21 @@
 const express = require('express')
-const route = express.Router()
-const db = require('mongodb').MongoClient
+const router = express.Router()
 
-// This route will be used for show a initial page.
-route.get('/', function(req, res){
-    res.render('home', { title : 'CRUD | With Node.js'});
+
+// Get all plants
+router.get('/', (req, res) => {
+    //res.send('Hello Carlos')
+    res.render('home', { title : 'CRUD | With Node.js' });
 })
 
-// plants
-route.post('/', function(req, res){
-    db.collection('plants').save(req.body, (err, result) => {
+// Get one plant by ID
+router.get('/:id', (req, res) => {
+    res.render('home', { title: 'CRUD | With Node.js' });
+})
+
+// Create one new plant title
+router.post('/', (req, res) => {
+    db.collection.save(req.body, (err, result) => {
         if(err)
             return console.log(err)
         console.log('Salvo no mongodb')
@@ -17,5 +23,12 @@ route.post('/', function(req, res){
     })
 })
 
+router.patch('/:id', (req, res) => {
 
-module.exports = route;
+})
+
+router.delete('/:id', (req, res) => {
+
+})
+
+module.exports = router;
