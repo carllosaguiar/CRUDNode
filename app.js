@@ -25,10 +25,6 @@ app.listen(process.env.PORT, () => console.log('server started'))
 
 app.use(bodyparser.urlencoded({extended: true})) // Our help with pass request body
 
-// Passing routes that the Server need manipulate
-//const router = require('./src/routes/index')
-//app.use('/', router)
-
 const router = require('./src/routes/index') //import routes for our app
 app.use('/', router) // Isso informa ao nosso app que sempre que receber uma solicitação com "/algumaCoisa", use o arquivo de rotas.
 
