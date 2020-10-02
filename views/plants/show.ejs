@@ -1,0 +1,30 @@
+<body>
+    <h2>Show All Titles</h2>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome Científico</th>
+            <th scope="col">Nome Pupular</th>
+            <th scope="col">Propriedade Terapeutica</th>
+            <th scope="col">Forma de Uso</th>
+            <th scope="col">Método de Extração</th>
+            <th scope="col">Região de Origem</th>
+            <th scope="col">ml p/Kg</th>
+          </tr>
+        </thead>
+        <% plants.forEach(function(data){ %>
+        <tbody>
+          <tr>
+            <th scope="row"><%=data.id%></th>
+            <td><%=data.scientificName%></td>
+            <td>data.popularName</td>
+            <td>data.therapeuticProperty</td>
+            <td>data.wayOfUse</td>
+            <td>data.wayOfUse</td>
+            <td>data.extractionMethod</td>
+          </tr>
+        </tbody>
+        <% }) %>
+      </table>
+</body>

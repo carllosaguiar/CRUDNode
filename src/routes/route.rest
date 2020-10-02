@@ -1,1 +1,17 @@
-GET http://localhost:3000/plants
+GET http://localhost:3000/
+###
+GET http://localhost:3000/plants/show 
+###
+
+POST http://localhost:3000/plants/add
+Content-Type: application/json
+
+{
+    "scientificName": "Schinus Terebinthifolia",
+    "popularName": "Aroeira", 
+    "therapeuticProperty": "Anti-inflamatório, Balsâmico, adstringente, antimicrobiana",
+    "wayOfUse": "Uso tópico, regiões secas e de mucosa",
+    "extractionMethod": "Arraste de vapor, diluição alcoolica",
+    "regionOfOrigin": "Mediterrânica, Macaronésica",
+    "extraction": 5
+}
