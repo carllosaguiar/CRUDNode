@@ -3,7 +3,7 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">ID</th>
+            <!--<th scope="col">ID</th>-->
             <th scope="col">Nome Científico</th>
             <th scope="col">Nome Pupular</th>
             <th scope="col">Propriedade Terapeutica</th>
@@ -16,13 +16,14 @@
         <% plants.forEach(function(data){ %>
         <tbody>
           <tr>
-            <th scope="row"><%=data.id%></th>
+            <!--<th scope="row"><%=data.id%></th>-->
             <td><%=data.scientificName%></td>
-            <td>data.popularName</td>
-            <td>data.therapeuticProperty</td>
-            <td>data.wayOfUse</td>
-            <td>data.wayOfUse</td>
-            <td>data.extractionMethod</td>
+            <td><%=data.popularName%></td>
+            <td><%=data.therapeuticProperty%></td>
+            <td><%=data.wayOfUse%></td>
+            <td><%=data.extractionMethod%></td>            
+            <td><%=data.regionOfOrigin%></td>
+            <td><%=data.extraction%></td>
           </tr>
         </tbody>
         <% }) %>
