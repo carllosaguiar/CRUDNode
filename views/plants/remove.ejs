@@ -1,0 +1,25 @@
+<body>
+    <h2>Delete a Title</h2>
+    <small><p>Pass the ID as a parameter</p></small>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome Pupular</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% plants.forEach(function(data){ %>
+        <tr>
+          <th scope="row"><%=data.id%></th>
+          <td><%=data.popularName%></td>
+          <td>
+            <a href="<%=`${data._id}?_method=delete`%>"
+           onclick="return confirm('Tem certeza que deseja excluir esse registro?')">Delete</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+</body>
