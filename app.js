@@ -26,10 +26,16 @@ app.listen(process.env.PORT, () => console.log('server started'))
 app.use(bodyparser.urlencoded({extended: true})) // Our help with pass request body
 
 const router = require('./src/routes/index') //import routes for our app
+
 app.use('/', router) // Isso informa ao nosso app que sempre que receber uma solicitação com "/algumaCoisa", use o arquivo de rotas.
 
 const routerPlants = require('./src/routes/plants/index') //import routes for our app
 app.use('/plants', routerPlants) // Isso informa ao nosso app que sempre que receber uma solicitação com "/algumaCoisa", use o arquivo de rotas.
+
+const methodOverride = require("method-override")
+router.use(methodOverride("_method", {
+    methods: ["POST", "GET", "PUT", "DELETE"]
+}))
 
 //export app
 module.exports = app // export our app variable for used in other app

@@ -13,11 +13,15 @@ router.get('/show', async (req, res) => {
     }
 })
 
-// Get one plant by ID
-router.get('/view/:id', getPlants, async (req, res) => {
-    res.render('plants/view.ejs', {plants: res.plants}, { title: 'CRUD | Get plant title by ID' })
+// Render form to search plant by ID
+router.get('/search', async (req, res) => {
+    res.render('plants/search.ejs', {title: 'CRUD | Search plant by ID' })
 })
 
+// Get one plant by ID
+router.get('/view/:id', getPlants, async (req, res) => {
+    res.render('plants/view.ejs', { plants: res.plants, title: 'CRUD | Get plant by ID' })
+})
 
 // Render form for added new title
 router.get('/new', async (req, res) => {
@@ -37,8 +41,8 @@ router.post('/add', async (req, res) => {
     })
 
     try{
-        const newPlant = await plant.save()
-        res.status(201).json(newPlant)
+        await plant.save()
+        res.render('plants/new.ejs', {title: 'CRUD | Add new title' })
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
@@ -49,9 +53,20 @@ router.patch('/:id', (req, res) => {
 
 })
 
-// Delete one plant by ID
-router.delete('/:id', (req, res) => {
+// Render form to search plant by ID
+router.get('/remove', async (req, res) => {
+    const plants = await Plant.find()
+    res.render('plants/remove.ejs', { plants: plants, title: 'CRUD | Remove a plant by ID' })
+})
 
+// Delete one plant by ID
+router.delete('/:id', getPlants, async (req, res) => {
+    try{
+        await res.plants.remove()
+        res.json({message: 'Deleted this plant'})
+    } catch(err) {
+        res.status(500).json({message: err.message})
+    }
 })
 
 // This is a function of middleware
