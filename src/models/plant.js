@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const plantSchema = new mongoose.Schema({
     scientificName: {
         type: String,
-        required: true
+        require: true
     },
     popularName: {
         type: String,
-        require: true   
+        require: true
     },
     therapeuticProperty: {
         type: String,
@@ -15,24 +15,19 @@ const plantSchema = new mongoose.Schema({
     },
     wayOfUse: {
         type: String,
-        required: true
+        require: true
     },
     extractionMethod: {
         type: String,
-        required: true
+        require: true
     },
     regionOfOrigin: {
         type: String,
-        required: true
+        require: true
     },
     extraction: {
         type: Number,
-        required: true
-    },
-    registrationDate: {
-        type: Date,
-        require: true,
-        default: Date.new
+        require: true
     }
 })
 

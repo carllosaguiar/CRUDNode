@@ -3,31 +3,31 @@
     <form action="/plants/add" method="POST">
         <div class="form-group">
           <label for="scientificName">Nome Científico</label>
-          <input type="text" class="form-control" id="scientificName" placeholder="Nome Científico">
+          <input type="text" class="form-control" id="scientificName" name="scientificName" placeholder="Nome Científico">
         </div>
         <div class="form-group">
           <label for="popularName">Nome Popular</label>
-          <input type="text" class="form-control" id="popularName" placeholder="Nome Popular">
+          <input type="text" class="form-control" id="popularName" name="popularName" placeholder="Nome Popular">
         </div>
         <div class="form-group">
           <label for="therapeuticProperty">Propriedade Terapeutica</label>
-          <input type="text" class="form-control" id="therapeuticProperty" placeholder="Propriedade Terapeutica">
+          <input type="text" class="form-control" id="therapeuticProperty" name="therapeuticProperty" placeholder="Propriedade Terapeutica">
         </div>
         <div class="form-group">
           <label for="wayOfUse">Forma de Uso</label>
-          <input type="text" class="form-control" id="wayOfUse" placeholder="Forma de Uso">
+          <input type="text" class="form-control" id="wayOfUse" name="wayOfUse" placeholder="Forma de Uso">
         </div>
         <div class="form-group">
           <label for="extractionMethod">Método de Extração</label>
-          <input type="text" class="form-control" id="extractionMethod" placeholder="Método de extração">
+          <input type="text" class="form-control" id="extractionMethod" name="extractionMethod" placeholder="Método de extração">
         </div>
         <div class="form-group">
           <label for="regionOfOrigin">Região de origem</label>
-          <input type="text" class="form-control" id="regionOfOrigin" placeholder="Região de origem">
+          <input type="text" class="form-control" id="regionOfOrigin" name="regionOfOrigin" placeholder="Região de origem">
         </div>     
         <div class="form-group">
-          <label for="extractionMethod">ml Extração p/ Kg</label>
-          <input type="number" class="form-control" id="extractionMethod" placeholder="ml por Kg de material">
+          <label for="extraction">ml Extração p/ Kg</label>
+          <input type="number" class="form-control" id="extraction" name="extraction" placeholder="ml por Kg de material">
         </div>     
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

@@ -34,7 +34,7 @@ app.use('/plants', routerPlants) // Isso informa ao nosso app que sempre que rec
 
 const methodOverride = require("method-override")
 router.use(methodOverride("_method", {
-    methods: ["POST", "GET", "PUT", "DELETE"]
+    methods: ["POST", "GET", "PUT", "DELETE", "PATCH"]
 }))
 
 //export app

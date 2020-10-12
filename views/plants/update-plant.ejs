@@ -1,0 +1,36 @@
+<body>
+    <h2>Edit Plant</h2>
+    <form action="<%=`${plant._id}?_method=PATCH`%>">
+        <div class="form-group">
+            <label for="scientificName">Nome Cientifico</label>
+            <input type="text" class="form-control" name="scientificName" id="scientificName" value="<%=plant.scientificName%>" placeholder="Nome Científico">
+        </div>
+        <div class="form-group">
+            <label for="popularName">Nome Popular</label>
+            <input type="text" class="form-control" name="popularName" id="popularName" value="<%=plant.popularName%>" placeholder="Nome popular">
+        </div>
+        <div class="form-group">
+            <label for="therapeuticProperty">Propriedade terapeutica</label>
+            <input type="text" class="form-control" name="therapeuticProperty" id="therapeuticProperty" value="<%=plant.therapeuticProperty%>" placeholder="Propriedade terapeutica">
+        </div>
+        <div class="form-group">
+            <label for="wayOfUse">Modo de Uso</label>
+            <input type="text" class="form-control" name="wayOfUse" id="wayOfUse" value="<%=plant.wayOfUse%>" placeholder="Modo de uso">
+        </div>
+        <div class="form-group">
+            <label for="extractionMethod">Metodo de extração</label>
+            <input type="text" class="form-control" name="extractionMethod" id="extractionMethod" value="<%=plant.extractionMethod %>" placeholder="Metodo de extração">
+        </div>
+        <div class="form-group">
+            <label for="regionOfOrigin">Região de origem</label>
+            <input type="text" class="form-control" name="regionOfOrigin" id="regionOfOrigin" value="<%=plant.regionOfOrigin %>" placeholder="Região de origem">
+        </div>
+        <div class="form-group">
+            <label for="extraction">Extração</label>
+            <input type="number" class="form-control" name="extraction" id="extraction" value="<%=plant.extraction %>" placeholder="ml/kg">
+        </div>
+            <button type="submit">Update</button>
+      </form>
+</body>
+  
+  

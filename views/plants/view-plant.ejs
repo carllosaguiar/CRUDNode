@@ -1,5 +1,5 @@
 <body>
-    <h2>Show All Titles</h2>
+    <h2>View a Plant by ID</h2>
     <table class="table table-striped">
         <thead>
           <tr>
@@ -12,7 +12,7 @@
             <th scope="col">ml p/Kg</th>
           </tr>
         </thead>
-        <% plants.forEach(function(data){ %>
+        <%plant.forEach(function(data){%>
         <tbody>
           <tr>
             <td><%=data.scientificName%></td>
@@ -24,6 +24,6 @@
             <td><%=data.extraction%></td>
           </tr>
         </tbody>
-        <% }) %>
+        <%})%>
       </table>
 </body>

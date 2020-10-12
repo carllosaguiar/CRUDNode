@@ -1,8 +1,12 @@
 GET http://localhost:3000/
+
 ###
 GET http://localhost:3000/plants/show 
-###
 
+###
+GET http://localhost:3000/plants/view/5f845f44a9e8e21e7ad23d28
+
+###
 POST http://localhost:3000/plants/add
 Content-Type: application/json
 
@@ -17,5 +21,12 @@ Content-Type: application/json
 }
 
 ###
+PATCH http://localhost:3000/plants/5f7e0a49315bef156162b4e3
+Content-Type: application/json 
 
+{
+    "popularName": "Lavanda"
+}
+
+###
 DELETE http://localhost:3000/plants/5f7e0a73315bef156162b4e4

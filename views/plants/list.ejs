@@ -1,5 +1,5 @@
 <body>
-    <h2>Delete a Title</h2>
+    <h2>Choose a plant for update</h2>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -14,8 +14,8 @@
           <th scope="row"><%=data.id%></th>
           <td><%=data.popularName%></td>
           <td>
-            <a href="<%=`${data._id}?_method=delete`%>"
-           onclick="return confirm('Tem certeza que deseja excluir esse registro?')">Delete</a>
+            <a href="<%=`update/${data._id}?_method=GET`%>"
+           onclick="return confirm('Proseguir com a atualização deste item?')">Update</a>
           </td>
         </tr>
         <% }) %>
